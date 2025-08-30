@@ -21,14 +21,33 @@ body{
 
 .content img{
     width: 400px;
-    transition: transform;
 }
 
-.content img :hover{
-    transform: scale(110%);
-}
 
 .content p{
     margin-top: 8px;
     color: var(--text);
+}
+
+@media screen and (max-width: 567px){
+    header{
+        width: 100vw;
+    }
+
+    .content{
+        display: block;
+        width: 100%;
+    }
+
+    .content p{
+        font-size: 20px;
+    }
+    
+    .dev-team{
+        width: 100%;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+
 }
