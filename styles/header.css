@@ -1,0 +1,12 @@
+header{
+    background-color: var(--header-back);
+    color: var(--text-header);
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    border-bottom: 4px solid var(--border-header);
+}
+
+header h1{
+    text-align: center;
+}

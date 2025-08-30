@@ -1,0 +1,28 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root{
+    --background-color: #f6f1eb;
+    --header-back: #6d4c41;
+    --text-header: #ffe6a7;
+    --border-header: #d7b899;
+    --text: #4e342e;
+}
+
+html h1{
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+}
+
+html p{
+    font-family: 'Domine', serif;
+    font-size: 32px;
+}
+
+html, body{
+    height: 100%;
+}

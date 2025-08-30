@@ -1,0 +1,19 @@
+footer{
+    background-color:var(--header-back);
+    border-top: 4px solid var(--border-header);
+    padding: 64px;
+    margin-top: auto;
+}
+
+.dev-team{
+    display: flex;
+    gap: 90px;
+    align-items: center;
+    justify-content: center;
+}
+
+.dev-name{
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--text-header);
+}
