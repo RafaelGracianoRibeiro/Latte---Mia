@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    background-color: #b9855f;
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.content h1{
+    font-size: 64px;
+    color: #ffe6a7;
+    font-family: Domine;
+    text-align: center;
+}
+
+.content p{
+    font-size: 32px;
+    color: #ffe6a7;   
+    font-family: Domine;                                                                                       
+}
+
+.content img{
+    border-radius:99px;
+    padding: 32px;
+}
+
+footer{
+    background-color: #33312f;
+}
+
+
