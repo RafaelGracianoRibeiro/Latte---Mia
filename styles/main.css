@@ -1,6 +1,7 @@
 @import url(global.css);
 @import url(header.css);
 @import url(footer.css);
+@import url(catalog.css);
 
 body{
     background-color: var(--background-color);
@@ -49,5 +50,13 @@ body{
         gap: 16px;
     }
 
+    .catalog h1{
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .item-list{
+        display: block;
+    }
 
 }
