@@ -16,5 +16,6 @@ footer{
     font-size: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: var(--text-header);
+    margin: 16px;
 }
 
