@@ -6,7 +6,7 @@
 }
 
 .catalog h1{
-    color: #6d4c41;
+    color: var(--text);
 }
 
 .item-list{

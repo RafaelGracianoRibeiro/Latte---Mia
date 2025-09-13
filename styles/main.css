@@ -10,6 +10,14 @@ body{
     flex-direction: column;
 }
 
+body.dark-mode{
+    --background-color: #181818;
+    --header-back: #222;
+    --text-header: #ffe6a7;
+    --border-header: #444;
+    --text: #eee;
+}
+
 .content{
     display: flex;
     justify-content: flex-end;

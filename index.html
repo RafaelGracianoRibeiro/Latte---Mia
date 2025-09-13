@@ -14,6 +14,10 @@
 <body>
     <header>
         <h1>Latte & Mia</h1>
+        <label class="switch">
+            <input type="checkbox" class="checkbox" id="darkModeToggle">
+            <div class="slider"></div>
+        </label>
     </header>
 
     <section class="content">
@@ -62,6 +66,19 @@ Além de criar uma experiência unica e exclusiva, oferecemos também diversos p
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app')
+    </script>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('darkModeToggle');
+            toggle.checked = false; // Garante que o slider começa desativado
+            document.body.classList.remove('dark-mode'); // Garante modo claro
+        });
+
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+        });
     </script>
 
 </body>
