@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" href="imgs/paw.png" type="image/x-icon">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/form-section.css">
+    <link rel="stylesheet" href="styles/custom-section.css">
+    <link rel="stylesheet" href="styles/google-form-section.css">
     <link href="https://fonts.googleapis.com/css2?family=Borel&family=Domine:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
@@ -21,8 +24,6 @@
             <div class="slider"></div>
         </label>
     </header>
-
-
 
     <section class="content">
         <img src="imgs/cat.png" alt="Gato Café">
@@ -49,6 +50,13 @@ Além de criar uma experiência unica e exclusiva, oferecemos também diversos p
         </ul>
     </div>
 
+        <section class="google-form-section">
+        <h1 class="google-form-title">Participe da nossa pesquisa!</h1>
+        <div class="google-form-frame-wrapper">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfzkapbViFmyJ3btEpDSnX-kkTrJ15YJv1LYodLDZXlSobfrQ/viewform?embedded=true" width="640" height="3411" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
+        </div>
+    </section>
+
 
 
     <footer>
@@ -57,12 +65,6 @@ Além de criar uma experiência unica e exclusiva, oferecemos também diversos p
             <li class="dev-name">Maria Eduarda Sousa Silva</li>
             <li class="dev-name">Ana Clara Alves</li>
             <li class="dev-name">Bruna Hellen</li>
-        </ul>
-
-        <ul class="dev-team">
-            <li class="dev-name">Khamilly Carvalho</li>
-            <li class="dev-name">Daniel Silva</li>
-            <li class="dev-name">João Pedro Chaves</li>
         </ul>
     </footer>
 
@@ -74,90 +76,10 @@ Além de criar uma experiência unica e exclusiva, oferecemos também diversos p
 </div>
 
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-
-    <!-- Leitura de texto selecionado com controle por botão -->
-    <script>
-    let screenReaderMode = false;
-    const screenReaderBtn = document.getElementById('screen-reader-btn');
-    let naturalVoice = null;
-
-    function getNaturalBrazilianVoice() {
-        const voices = window.speechSynthesis.getVoices();
-        const preferred = voices.find(v => v.lang === 'pt-BR' && /Luciana|Camila|Vitoria|female|mulher/i.test(v.name));
-        if (preferred) return preferred;
-        return voices.find(v => v.lang === 'pt-BR') || null;
-    }
-
-    function speakText(text) {
-        if (!text) return;
-        window.speechSynthesis.cancel();
-        const utter = new window.SpeechSynthesisUtterance(text);
-        if (!naturalVoice) {
-            naturalVoice = getNaturalBrazilianVoice();
-        }
-        if (naturalVoice) {
-            utter.voice = naturalVoice;
-        }
-        utter.lang = 'pt-BR';
-        utter.rate = 0.95;
-        utter.pitch = 1.1;
-        utter.volume = 1;
-        window.speechSynthesis.speak(utter);
-    }
-
-    function handleMouseOver(e) {
-        if (!screenReaderMode) return;
-        const target = e.target;
-        // Evita ler o botão de leitura
-        if (target.id === 'screen-reader-btn') return;
-        // Só lê se for um elemento textual
-        const allowedTags = ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'SPAN', 'LI', 'A', 'LABEL', 'BUTTON'];
-        if (!allowedTags.includes(target.tagName)) return;
-        let text = target.innerText || target.alt || target.ariaLabel || '';
-        text = text.trim();
-        if (text.length > 0) {
-            speakText(text);
-        }
-    }
-
-    if (typeof speechSynthesis !== 'undefined') {
-        window.speechSynthesis.onvoiceschanged = () => {
-            naturalVoice = getNaturalBrazilianVoice();
-        };
-    }
-
-    screenReaderBtn.addEventListener('click', function() {
-        screenReaderMode = !screenReaderMode;
-        screenReaderBtn.style.background = screenReaderMode ? '#4caf50' : '#222';
-        screenReaderBtn.setAttribute('aria-pressed', screenReaderMode);
-        if (screenReaderMode) {
-            document.body.addEventListener('mouseover', handleMouseOver, true);
-        } else {
-            document.body.removeEventListener('mouseover', handleMouseOver, true);
-            window.speechSynthesis.cancel();
-        }
-    });
-    </script>
-
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app')
-    </script>
-    
-
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const toggle = document.getElementById('darkModeToggle');
-            toggle.checked = false; // Garante que o slider começa desativado
-            document.body.classList.remove('dark-mode'); // Garante modo claro
-        });
-
-        const toggle = document.getElementById('darkModeToggle');
-        toggle.addEventListener('change', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
-
+    <!-- Scripts externos -->
+    <script src="scripts/screen-reader.js"></script>
+    <script src="scripts/vlibras-init.js"></script>
+    <script src="scripts/darkmode-toggle.js"></script>
 </body>
-
 
 </html>
